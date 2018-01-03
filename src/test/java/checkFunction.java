@@ -13,4 +13,18 @@ public class checkFunction {
         assertThat(Operator.DIVISION, is("/"));
     }
 
+    @Test
+    public void 곱하기_나누기_연산이_먼저_되는가() {
+        Main main = new Main();
+        //assertThat(main.firstMultiplyAndDivision(new String[]{"1", "+", "3", "*", "4"}), is(13));
+        //assertThat(main.firstMultiplyAndDivision(new String[]{"1", "+", "3", "*", "4", "*", "5"}), is(61));
+        assertThat(main.firstMultiplyAndDivision(new String[]{"1", "+", "3", "*", "4", "*", "5", "-", "3"}), is(58));
+
+    }
+
+    @Test
+    public void 숫자와_연산자가_올바르게_입력되었는가() {
+
+    }
+
 }
