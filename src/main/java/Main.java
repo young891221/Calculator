@@ -1,15 +1,14 @@
 import java.util.List;
-import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println(run(new Scanner(System.in)));
+        System.out.println(run());
     }
 
-    public static int run(Scanner scan) {
+    public static Object run() {
         init();
-        int result = 0;
+        int result;
         Input input = new Input();
         Calculator calculator = new Calculator();
 
@@ -17,8 +16,7 @@ public class Main {
             List<String> list = input.checkReturnList();
             result = calculator.firstMultiplyAndDivision(list);
         } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println("형식을 올바르게 맞춰주세요.");
+            return "형식을 올바르게 맞춰주세요.";
         }
 
         return result;
