@@ -26,5 +26,7 @@ public enum Operator {
         return this.operator.equals(operator);
     }
 
+    public String getValue() { return this.operator; }
+
     abstract int apply(int a, int b);
 }
