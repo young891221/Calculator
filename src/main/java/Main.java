@@ -9,12 +9,10 @@ public class Main {
     public static Object run() {
         init();
         int result;
-        Input input = new Input();
-        Calculator calculator = new Calculator();
 
         try {
-            List<String> list = input.checkReturnList();
-            result = calculator.firstMultiplyAndDivision(list);
+            List<String> list = new Input().checkReturnList();
+            result = Calculator.firstMultiplyAndDivision(list);
         } catch (Exception e) {
             return "형식을 올바르게 맞춰주세요.";
         }
