@@ -15,10 +15,11 @@ public class checkFunction {
 
     @Test
     public void 곱하기_나누기_연산이_먼저_되는가() {
-        Main main = new Main();
-        //assertThat(main.firstMultiplyAndDivision(new String[]{"1", "+", "3", "*", "4"}), is(13));
-        //assertThat(main.firstMultiplyAndDivision(new String[]{"1", "+", "3", "*", "4", "*", "5"}), is(61));
-        assertThat(main.firstMultiplyAndDivision(new String[]{"1", "+", "3", "*", "4", "*", "5", "-", "3"}), is(58));
+        Calculator calculator = new Calculator();
+        assertThat(calculator.firstMultiplyAndDivision(new String[]{"1", "+", "3", "*", "4"}), is(13));
+        assertThat(calculator.firstMultiplyAndDivision(new String[]{"1", "+", "3", "*", "4", "*", "5"}), is(61));
+        assertThat(calculator.firstMultiplyAndDivision(new String[]{"1", "+", "3", "*", "4", "*", "5", "-", "3"}), is(58));
+        assertThat(calculator.firstMultiplyAndDivision(new String[]{"1", "+", "3", "*", "5", "/", "5", "-", "3"}), is(1));
 
     }
 
