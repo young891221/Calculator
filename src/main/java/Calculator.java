@@ -5,9 +5,7 @@ import java.util.stream.IntStream;
 
 public class Calculator {
 
-    public int firstMultiplyAndDivision(String[] arr) {
-        List<String> dinamicArr = new ArrayList<>(Arrays.asList(arr));
-
+    public int firstMultiplyAndDivision(List<String> dinamicArr) {
         forLoop(dinamicArr, Operator.MULTIPLY, Operator.DIVISION);
         forLoop(dinamicArr, Operator.PLUS, Operator.MINUS);
 
