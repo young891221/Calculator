@@ -3,6 +3,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
+import enums.Operator;
+
 public class Input {
     private Scanner scanner;
 

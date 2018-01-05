@@ -2,6 +2,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.IntStream;
 
+import enums.Bracket;
+import enums.Operator;
+
 public class Calculator {
 
     public static List<String> firstBracket(List<String> dynamicArr) {

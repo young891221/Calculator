@@ -1,19 +1,21 @@
+package enums;
+
 public enum Operator {
     PLUS("+") {
         @Override
-        int apply(int a, int b) { return a + b; }
+        public int apply(int a, int b) { return a + b; }
     },
     MINUS("-") {
         @Override
-        int apply(int a, int b) { return a - b; }
+        public int apply(int a, int b) { return a - b; }
     },
     MULTIPLY("*") {
         @Override
-        int apply(int a, int b) { return a * b; }
+        public int apply(int a, int b) { return a * b; }
     },
     DIVISION("/") {
         @Override
-        int apply(int a, int b) { return a / b; }
+        public int apply(int a, int b) { return a / b; }
     };
 
     private String operator;
@@ -28,5 +30,5 @@ public enum Operator {
 
     public String getValue() { return this.operator; }
 
-    abstract int apply(int a, int b);
+    public abstract int apply(int a, int b);
 }
