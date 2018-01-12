@@ -23,20 +23,27 @@ public class Input {
             if("=".equals(target)) break;
             result.add(target);
 
-            if(check++ % 2 == 0) { //짝수
-                int finalI = i;
-                Arrays.stream(Operator.values()).filter(o -> o.matchOperator(result.get(finalI))).findAny().orElseThrow(NumberFormatException::new);
-            }
-            else { //홀수
-                try {
-                    Integer.parseInt(result.get(i));
-                } catch (NumberFormatException e) {
-                    throw new NumberFormatException();
-                }
-            }
+            check = checkInputType(result, i, check);
             i++;
         }
 
         return result;
+    }
+
+    private int checkInputType(List<String> result, int i, int check) {
+        boolean isEven = check++ % 2 == 0;
+
+        if(isEven) {
+            int finalI = i;
+            Arrays.stream(Operator.values()).filter(o -> o.matchOperator(result.get(finalI))).findAny().orElseThrow(NumberFormatException::new);
+        }
+        else if(!isEven) {
+            try {
+                Integer.parseInt(result.get(i));
+            } catch (NumberFormatException e) {
+                throw new NumberFormatException();
+            }
+        }
+        return check;
     }
 }
