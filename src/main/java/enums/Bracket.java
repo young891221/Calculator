@@ -10,7 +10,7 @@ public enum Bracket {
         this.value = value;
     }
 
-    public boolean isEquals(String target) {
+    public boolean isEqualTarget(String target) {
         return value.equals(target);
     }
 }

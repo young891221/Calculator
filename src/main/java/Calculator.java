@@ -11,12 +11,12 @@ public class Calculator {
         for (int i = 0; i < dynamicArr.size(); i++) {
             String target = dynamicArr.get(i);
 
-            if(Bracket.PREV.isEquals(target)) {
+            if(Bracket.PREV.isEqualTarget(target)) {
                 List<String> bracketList = new ArrayList<>();
                 int j;
                 for (j = i+1; i < dynamicArr.size(); j++) {
                     String subtarget = dynamicArr.get(j);
-                    if(Bracket.POST.isEquals(subtarget)) break;
+                    if(Bracket.POST.isEqualTarget(subtarget)) break;
                     bracketList.add(subtarget);
                 }
                 switchListElement(dynamicArr, i, j, String.valueOf(firstMultiplyAndDivision(bracketList)));
