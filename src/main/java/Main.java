@@ -11,7 +11,7 @@ public class Main {
         int result;
 
         try {
-            List<String> list = new Input().checkReturnList();
+            List<String> list = new Input(System.in).checkReturnList();
             result = Calculator.firstMultiplyAndDivision(list);
         } catch (Exception e) {
             return "형식을 올바르게 맞춰주세요.";

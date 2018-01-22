@@ -1,3 +1,4 @@
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -8,10 +9,9 @@ import enums.Operator;
 public class Input {
     private Scanner scanner;
 
-    public Input(String... testCase) {
-        scanner = (testCase.length == 0)
-                ? new Scanner(System.in)
-                : new Scanner(String.valueOf(testCase[0]));
+    public Input(Object value) {
+        if(value instanceof InputStream) scanner = new Scanner((InputStream) value);
+        else if(value instanceof String) scanner = new Scanner((String) value);
     }
 
     public List checkReturnList() {
