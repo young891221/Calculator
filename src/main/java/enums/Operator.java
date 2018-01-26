@@ -1,27 +1,23 @@
 package enums;
 
+import java.util.function.BiFunction;
+
 public enum Operator {
-    PLUS("+") {
-        @Override
-        public int apply(int a, int b) { return a + b; }
-    },
-    MINUS("-") {
-        @Override
-        public int apply(int a, int b) { return a - b; }
-    },
-    MULTIPLY("*") {
-        @Override
-        public int apply(int a, int b) { return a * b; }
-    },
-    DIVISION("/") {
-        @Override
-        public int apply(int a, int b) { return a / b; }
-    };
+    PLUS("+", (a, b) -> a + b),
+    MINUS("-", (a, b) -> a - b),
+    MULTIPLY("*", (a, b) -> a * b),
+    DIVISION("/", (a, b) -> a / b);
 
     private String operator;
+    private BiFunction<Integer, Integer, Integer> function;
 
-    Operator(String operator) {
+    Operator(String operator, BiFunction<Integer, Integer, Integer> function) {
         this.operator = operator;
+        this.function = function;
+    }
+
+    public int apply(int a, int b) {
+        return this.function.apply(a, b);
     }
 
     public boolean matchOperator(String operator) {
@@ -30,5 +26,4 @@ public enum Operator {
 
     public String getValue() { return this.operator; }
 
-    public abstract int apply(int a, int b);
 }
